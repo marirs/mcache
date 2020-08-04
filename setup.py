@@ -49,7 +49,7 @@ setup(
     author='Sriram G',
     author_email='marirs@gmail.com',
     license='MIT',
-    url='https://github.com/marirs/allwhois/',
+    url='https://github.com/marirs/mcache/',
     zip_safe=False,
     packages=find_packages(),
     install_requires=install_requires,
