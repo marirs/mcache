@@ -1,6 +1,6 @@
 Async ready Multi Cache Library
 =================================
-
+[![Build Status](https://travis-ci.org/marirs/mcache.svg?branch=master)](https://travis-ci.org/marirs/mcache)
 [![codecov](https://codecov.io/gh/marirs/mcache/branch/master/graph/badge.svg)](https://codecov.io/gh/marirs/mcache)
 [![GitHub license](https://img.shields.io/github/license/marirs/mcache)](https://github.com/marirs/mcache/blob/master/LICENSE)
 ![PyPI - Status](https://img.shields.io/pypi/status/mcache)
