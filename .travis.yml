@@ -1,0 +1,19 @@
+language: python
+dist: bionic
+before_install:
+    - sudo apt-get update
+    - sudo apt-get -y install memcached libmemcached-tools
+    - systemctl start memcached
+    - systemctl enable memcached
+
+python:
+    - "3.7"
+
+install:
+    - make install
+
+script:
+    - make tests
+
+after_success:
+    - codecov
