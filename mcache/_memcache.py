@@ -29,7 +29,7 @@ class Memcache:
             self._port = port or self._port
             conn = (self._host, self._port)
         try:
-            self._engine = _MemcacheClient(conn)
+            self._engine = _MemcacheClient(conn, timeout=5)
         except ConnectionResetError:
             raise ConnectionResetError("Connection reset")
         except ConnectionRefusedError:
