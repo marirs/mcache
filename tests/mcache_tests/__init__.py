@@ -1,3 +1,4 @@
+"""tests."""
 __all__ = [
     "TestKey", "TestFilecache", "TestMemcache"
 ]

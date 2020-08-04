@@ -6,12 +6,12 @@ import os
 import shelve
 
 
-_CACHE_STORE_PATH = '.cache'
+_CACHE_STORE_PATH: str = '.cache'
 
 
 class FileCache:
     """File Cache Store."""
-    _cache_filename = "caches"
+    _cache_filename: str = "caches"
 
     def __init__(self, cache_path=None):
         """
@@ -22,7 +22,7 @@ class FileCache:
             self._cache_filename = file
         if not os.path.exists(path):
             os.makedirs(path)
-        fn = os.path.join(path, self._cache_filename)
+        fn = os.path.join(path, self._cache_filename)  # pylint: disable=C0103
         self._engine = shelve.open(fn)
 
     def __del__(self):
@@ -47,4 +47,3 @@ class FileCache:
         value = self._engine.pop(key)
         self._engine.sync()
         return value
-

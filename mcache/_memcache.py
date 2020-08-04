@@ -31,7 +31,7 @@ class Memcache:
         try:
             self._engine = _MemcacheClient(conn)
         except ConnectionResetError:
-            raise
+            raise ConnectionResetError("Connection reset")
         except ConnectionRefusedError:
             raise ConnectionRefusedError(f"Could not connect to: {conn}")
         except FileNotFoundError:
@@ -56,4 +56,3 @@ class Memcache:
     def pop(self, key: str) -> str:
         """Remove a cache key/value."""
         raise NotImplementedError()
-

@@ -1,3 +1,4 @@
+"""tests."""
 import pytest
 from .mcache_tests import TestKey, TestMemcache, TestFilecache
 

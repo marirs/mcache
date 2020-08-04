@@ -22,14 +22,15 @@ YEAR = 365 * DAY
 FOREVER = None
 
 
-class filecache(BaseCache):
+class filecache(BaseCache):  # pylint: disable=C0103, R0903
+    """filecache."""
     def __init__(self, lifetime=FOREVER, cache_path=None, fail_silent=True):
         file_store = FileCache(cache_path=cache_path)
         super().__init__(file_store, BaseCache.makekey, lifetime, fail_silent)
 
 
-class memcache(BaseCache):
+class memcache(BaseCache):  # pylint: disable=C0103, R0903
+    """memcache."""
     def __init__(self, lifetime=FOREVER, host=None, port=None, unix_sock=None, fail_silent=True):
         memcache_kvstore = Memcache(host=host, port=port, unix_sock=unix_sock)
         super().__init__(memcache_kvstore, BaseCache.makekey, lifetime, fail_silent)
-
